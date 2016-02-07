@@ -13,9 +13,10 @@ searchKeys = [
 
 finalURL = baseURL
 for i in range(0, len(searchKeys)): # len() returns length of a variable
-    print "Term: %d" % (i)
+    # print "Term: %d" % (i)
     currentKey = searchKeys[i]
     appendStr = currentKey[0] + "=" + currentKey[1]
+    print(appendStr)
     if i < (len(searchKeys) - 1):
         appendStr += "&"
     finalURL += appendStr
