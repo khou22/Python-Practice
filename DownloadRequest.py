@@ -14,12 +14,6 @@ logo.raise_for_status() # Callback if page not found
 # Response 200 is a success, 404 is a failure
 logo.status_code == requests.codes.ok
 
-# Simple console progress indicator
-# for i in range(100):
-    # time.sleep(1)
-    # sys.stdout.write("\r%d%%" % i)
-    # sys.stdout.flush()
-
 def reporthook(blocknum, blocksize, totalsize): # built in callback for urlretrieve
     readsofar = blocknum * blocksize
     if totalsize > 0:

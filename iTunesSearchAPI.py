@@ -15,8 +15,10 @@ finalURL = baseURL
 for i in range(0, len(searchKeys)): # len() returns length of a variable
     # print "Term: %d" % (i)
     currentKey = searchKeys[i]
-    appendStr = currentKey[0] + "=" + currentKey[1]
-    print(appendStr)
+    criteria = str(currentKey[1]) #Make sure it's a string
+    criteria = criteria.replace(" ", "%20") # %20 represents a space
+    appendStr = currentKey[0] + "=" + criteria # Build url
+    # print(appendStr)
     if i < (len(searchKeys) - 1):
         appendStr += "&"
     finalURL += appendStr
