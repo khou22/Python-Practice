@@ -3,7 +3,15 @@ import lxml # Module to parse through the html for BeautifulSoup
 import urllib2 # Gets html
 import webbrowser # This module can control the browser
 
-response = urllib2.urlopen("https://login.yahoo.com/config/login?.src=fpctx&.intl=us&.lang=en-US&.done=https%3A%2F%2Fwww.yahoo.com") #Get markdown
+url = "https://login.yahoo.com/config/login?.src=fpctx&.intl=us&.lang=en-US&.done=https%3A%2F%2Fwww.yahoo.com"
+try: # Make sure link exists
+    urllib2.urlopen(url)
+except urllib2.HTTPError, e:
+    print(e.code) # Return any errors
+except urllib2.URLError, e:
+    print(e.args)
+
+response = urllib2.urlopen(url) #Get markdown
 
 html = response.read() #Markdown
 
