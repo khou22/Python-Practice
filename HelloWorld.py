@@ -1,3 +1,1 @@
-conditional = True
-if conditional:
-	print("Hello world")
+conditional = Trueif conditional:    print("Hello world")    print("Testing PyCharm")
