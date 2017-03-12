@@ -1,3 +1,4 @@
+# Removing punctuation from a string
 import string
 
 s = "String. With. Punctuation?" # Sample string

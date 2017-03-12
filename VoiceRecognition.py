@@ -9,17 +9,20 @@ import speech_recognition as sr
 
 # obtain audio from the microphone
 r = sr.Recognizer()
-with sr.Microphone() as source:
+with sr.Microphone() as source: # Listen for audio
     print("Say something!")
     audio = r.listen(source)
 
-# recognize speech using Sphinx
+# Processing audio
+print("Processing...")
+
+# recognize speech using Sphinx (works offline)
 try:
     print("Sphinx thinks you said " + r.recognize_sphinx(audio))
 except sr.UnknownValueError:
     print("Sphinx could not understand audio")
 except sr.RequestError as e:
-    print("Sphinx error; {0}".format(e))
+    print("Sphinx error; {0}".format(e)) # Print error
 
 '''
 # recognize speech using Google Speech Recognition
